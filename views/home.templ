@@ -1,0 +1,20 @@
+package views
+
+templ Home() {
+	@Layout() {
+		<main class="sm:container sm:mx-auto mx-3 py-4">
+			<h1 class="font-bold text-4xl">Zgadnij liczbe</h1>
+			<p class="text-pretty py-4 sm:w-2/4 w-3/4">Program wybral liczbe od 1 od 100. Sprawdz czy uda ci sie ja odgadnac w mniej niz 10 prob. <br/>Otrzymasz podpowiedz o tym, czy zgadywana przez ciebie wartosc jest zbyt duza luz zbyt mala</p>
+			<div class="flex gap-2 pb-4 items-center">
+				<label class="font-medium">Wprowadz liczbe</label>
+				<input required class="bg-zinc-200 p-1 border-2 rounded-md" id="guess_input" type="number"/>
+				<button class="active:scale-90 transition rounded-md border-2 border-solid border-blue-500 hover:border-black font-medium hover:bg-white hover:text-black p-1 px-4 text-white bg-blue-500" id="guess_btn">Zgadnij</button>
+				<button class="active:scale-90 transition rounded-md border-2 border-solid border-blue-500 hover:border-black font-medium hover:bg-white hover:text-black p-1 px-4 text-white bg-blue-500" id="restart_btn">Rozpocznij nowa gre!</button>
+			</div>
+			<p>Poprzednio wprowadzone liczby:<p id="guess_history"></p></p>
+			<p class="bg-red-500 font-medium text-white display-none my-4 hidden rounded-md p-1" id="game_over">Koniec gry</p>
+			<p class="bg-green-500 font-medium text-white display-none my-4 hidden rounded-md p-1" id="game_won">Wygrana</p>
+			<p class="hidden mb-4 display-none hidden" id="guess_result">Zbyt mala liczba</p>
+		</main>
+	}
+}
