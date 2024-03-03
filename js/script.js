@@ -6,6 +6,11 @@ const gameOver = document.getElementById("game_over")
 const gameWon = document.getElementById("game_won")
 const restartBtn = document.getElementById("restart_btn")
 
+const fName = prompt("Imie: ")
+const lName = prompt("Nazwisko: ")
+
+alert(`Witaj, ${fName} ${lName}.\nGra polega na zgadnieciu losowej liczby pomiedzy 0-100`)
+
 /**
 * @param {number} min
 * @param {number} max
@@ -31,6 +36,8 @@ class Game {
 	* @param {number} n
 	*/
 	#tryGuess(n) {
+		if (!n) { return }
+
 		const isCorrect = n === this.#answer
 		
 		if (isCorrect) {
